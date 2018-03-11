@@ -5,15 +5,14 @@ namespace iBankApp.Core.Data.Model
 {
     public class iBankAppContext : DbContext
     {
+        public iBankAppContext(DbContextOptions<iBankAppContext> options) : base(options)
+        {
+        }
+
         public virtual DbSet<Account> Account { get; set; }
         public virtual DbSet<AccountTransaction> AccountTransaction { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<TransactionType> TransactionType { get; set; }
-
-        public iBankAppContext(DbContextOptions<iBankAppContext> options) : base(options)
-        {
-
-        }       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

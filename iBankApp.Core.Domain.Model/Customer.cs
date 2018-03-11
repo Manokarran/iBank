@@ -5,7 +5,10 @@ namespace iBankApp.Core.Domain.Model
 {
     public class Customer
     {
-        public Customer() => Account = new HashSet<Account>();
+        public Customer()
+        {
+            Account = new HashSet<Account>();
+        }
 
         public long Id { get; set; }
         public string FirstName { get; set; }

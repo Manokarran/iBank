@@ -5,7 +5,10 @@ namespace iBankApp.ViewModel
 {
     public class CustomerTransactionDTO
     {
-        public CustomerTransactionDTO() => Transactions = new HashSet<TransactionDTO>();
+        public CustomerTransactionDTO()
+        {
+            Transactions = new HashSet<TransactionDTO>();
+        }
 
         public long CustomerId { get; set; }
         public string CustomerFirstName { get; set; }
@@ -19,6 +22,5 @@ namespace iBankApp.ViewModel
         public string TransactionCode { get; set; }
 
         public ICollection<TransactionDTO> Transactions { get; set; } = new List<TransactionDTO>();
-
     }
 }

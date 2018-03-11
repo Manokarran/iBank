@@ -8,7 +8,6 @@ namespace IBankApp.API.Controllers
         {
             //Set as default api to make sure communication works
             return Ok();
-
         }
     }
 }

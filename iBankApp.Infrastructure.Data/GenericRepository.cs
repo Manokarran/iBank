@@ -1,9 +1,9 @@
-﻿using iBankApp.Core.Data.Model;
-using iBankApp.Interfaces.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using iBankApp.Core.Data.Model;
+using iBankApp.Interfaces.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace iBankApp.Infrastructure.Data
 {
@@ -11,10 +11,14 @@ namespace iBankApp.Infrastructure.Data
     {
         private readonly DbSet<TEntity> _dbset;
 
-        protected GenericRepository(iBankAppContext dbContext) => _dbset = dbContext.Set<TEntity>();
+        protected GenericRepository(iBankAppContext dbContext)
+        {
+            _dbset = dbContext.Set<TEntity>();
+        }
 
 
         // Data retrieval Operations
+
         #region Data Retrieval
 
         private IQueryable<TEntity> Query => _dbset;
@@ -29,15 +33,14 @@ namespace iBankApp.Infrastructure.Data
             return _dbset.Find(id);
         }
 
-        public IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> expression, params Expression<Func<TEntity, object>>[] navigationProperties)
+        public IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> expression,
+            params Expression<Func<TEntity, object>>[] navigationProperties)
         {
             var queryable = Query;
 
             if (navigationProperties != null)
-            {
                 queryable = navigationProperties.Aggregate(queryable,
                     (current, navigationProperty) => current.Include(navigationProperty));
-            }
 
             return queryable.Where(expression);
         }
@@ -47,20 +50,20 @@ namespace iBankApp.Infrastructure.Data
             return Query.AsNoTracking();
         }
 
-        public IQueryable<TEntity> GetReadOnly(Expression<Func<TEntity, bool>> expression, params Expression<Func<TEntity, object>>[] navigationProperties)
+        public IQueryable<TEntity> GetReadOnly(Expression<Func<TEntity, bool>> expression,
+            params Expression<Func<TEntity, object>>[] navigationProperties)
         {
             var queryable = Query.AsNoTracking();
 
             if (navigationProperties != null)
-            {
                 queryable = navigationProperties.Aggregate(queryable,
                     (current, navigationProperty) => current.Include(navigationProperty));
-            }
 
             return queryable.Where(expression);
         }
 
-        public IQueryable<TEntity> GetReadOnly(Expression<Func<TEntity, bool>> filter, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy,
+        public IQueryable<TEntity> GetReadOnly(Expression<Func<TEntity, bool>> filter,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy,
             int page = 0, int pageSize = 50)
         {
             var query = Query.AsNoTracking();
@@ -77,11 +80,10 @@ namespace iBankApp.Infrastructure.Data
             return query;
         }
 
-
-
         #endregion
 
         // Count Operations
+
         #region Count
 
         public int Count()

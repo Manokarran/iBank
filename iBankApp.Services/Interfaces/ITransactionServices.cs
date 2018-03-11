@@ -1,5 +1,5 @@
-﻿using iBankApp.ViewModel;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using iBankApp.ViewModel;
 
 namespace iBankApp.Services.Interfaces
 {

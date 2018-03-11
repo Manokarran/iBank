@@ -1,28 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using iBankApp.Core.Domain.Model;
 using iBankApp.Core.Data.Model;
+using iBankApp.Core.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace iBankApp.Data.Setup
 {
     public class iBankDataSetup
     {
+        private static readonly Random random = new Random();
         private readonly iBankAppContext _dbcontext;
 
         private readonly DbSet<Customer> _dbset;
 
         public iBankDataSetup(iBankAppContext context)
         {
-            
             _dbcontext = context;
             _dbset = _dbcontext.Set<Customer>();
         }
 
         public void SetUpData()
         {
-
             if (_dbset.Any()) return;
 
 
@@ -32,39 +31,33 @@ namespace iBankApp.Data.Setup
             _dbcontext.AccountTransaction.AddRange(AddTransaction());
 
             _dbcontext.SaveChanges();
-
         }
 
-        private static readonly Random random = new Random();
-
-        private static Decimal RandomBalanceBetween(double minValue, double maxValue)
+        private static decimal RandomBalanceBetween(double minValue, double maxValue)
         {
             var next = random.NextDouble();
 
-            return (decimal) (minValue + (next * (maxValue - minValue)));
+            return (decimal) (minValue + next * (maxValue - minValue));
         }
 
         private IEnumerable<TransactionType> AddTransactionTypes()
         {
             var transactionType = new List<TransactionType>
             {
-                new TransactionType()
+                new TransactionType
                 {
                     Code = "DEBT",
-                    Description  = "Debits",
-
+                    Description = "Debits"
                 },
-                 new TransactionType()
+                new TransactionType
                 {
                     Code = "CRDT",
-                    Description  = "Credits",
-
+                    Description = "Credits"
                 },
-                   new TransactionType()
+                new TransactionType
                 {
                     Code = "OTHER",
-                    Description  = "Other Transactions",
-
+                    Description = "Other Transactions"
                 }
             };
             return transactionType;
@@ -74,21 +67,21 @@ namespace iBankApp.Data.Setup
         {
             var customers = new List<Customer>
             {
-                new Customer()
+                new Customer
                 {
                     Id = 1,
                     FirstName = "Manokaran",
                     LastName = "Chidambaram",
                     ContactInformation = "Sydney"
                 },
-                new Customer()
+                new Customer
                 {
                     Id = 2,
                     FirstName = "Jayesh",
                     LastName = "Nair",
                     ContactInformation = "Ashfield"
                 },
-                 new Customer()
+                new Customer
                 {
                     Id = 3,
                     FirstName = "Hari",
@@ -98,190 +91,194 @@ namespace iBankApp.Data.Setup
             };
 
             return customers;
-            
         }
 
         private IEnumerable<Account> AddAccount()
         {
             var accounts = new List<Account>
             {
-                new Account()
+                new Account
                 {
                     Id = 1,
-                    CustomerId=1,
+                    CustomerId = 1,
                     Balance = RandomBalanceBetween(200, 100000)
                 },
-                new Account()
+                new Account
                 {
                     Id = 2,
-                    CustomerId=1,
-                   Balance = RandomBalanceBetween(200, 100000)
+                    CustomerId = 1,
+                    Balance = RandomBalanceBetween(200, 100000)
                 },
-                new Account {
+                new Account
+                {
                     Id = 3,
-                    CustomerId=1,
+                    CustomerId = 1,
                     Balance = RandomBalanceBetween(200, 100000)
                 },
-                new Account {
+                new Account
+                {
                     Id = 4,
-                    CustomerId=2,
+                    CustomerId = 2,
                     Balance = RandomBalanceBetween(200, 100000)
                 },
-                  new Account {
+                new Account
+                {
                     Id = 5,
-                    CustomerId=2,
+                    CustomerId = 2,
                     Balance = RandomBalanceBetween(200, 100000)
                 },
-                    new Account {
+                new Account
+                {
                     Id = 6,
-                    CustomerId=2,
+                    CustomerId = 2,
                     Balance = RandomBalanceBetween(200, 100000)
                 },
-                new Account {
+                new Account
+                {
                     Id = 7,
-                    CustomerId=3,
+                    CustomerId = 3,
                     Balance = RandomBalanceBetween(200, 100000)
                 },
-                new Account {
+                new Account
+                {
                     Id = 8,
-                    CustomerId=3,
+                    CustomerId = 3,
                     Balance = RandomBalanceBetween(200, 100000)
                 },
-                new Account {
+                new Account
+                {
                     Id = 9,
-                    CustomerId=3,
+                    CustomerId = 3,
                     Balance = RandomBalanceBetween(200, 100000)
-                },
+                }
             };
 
             return accounts;
-
         }
 
-     
 
         private IEnumerable<AccountTransaction> AddTransaction()
         {
             var accountTransaction = new List<AccountTransaction>
             {
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 1,
                     AccountId = 1,
-                  
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
-                    TransactionCode = "CRDT"                   
+                    TransactionCode = "CRDT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 2,
                     AccountId = 1,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 3,
                     AccountId = 2,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "OTHER"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 4,
                     AccountId = 3,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 5,
                     AccountId = 3,
-                  
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 6,
                     AccountId = 4,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 7,
                     AccountId = 5,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "CRDT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 8,
                     AccountId = 6,
-                    
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 9,
                     AccountId = 7,
-                  
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "CRDT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 10,
                     AccountId = 8,
-                    
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "OTHER"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 11,
                     AccountId = 9,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "CRDT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 12,
                     AccountId = 7,
-                  
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 13,
                     AccountId = 8,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 14,
                     AccountId = 9,
@@ -289,11 +286,11 @@ namespace iBankApp.Data.Setup
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "DEBT"
                 },
-                new AccountTransaction()
+                new AccountTransaction
                 {
                     Id = 15,
                     AccountId = 6,
-                   
+
                     Amount = RandomBalanceBetween(10, 300),
                     Date = DateTime.UtcNow.AddDays(new Random().Next(90)),
                     TransactionCode = "CRDT"
@@ -301,8 +298,6 @@ namespace iBankApp.Data.Setup
             };
 
             return accountTransaction;
-
         }
-
     }
 }

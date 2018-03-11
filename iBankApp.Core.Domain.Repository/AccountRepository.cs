@@ -10,9 +10,6 @@ namespace iBankApp.Core.Domain.Repository
         public AccountRepository(iBankAppContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
-
         }
     }
-
 }
-

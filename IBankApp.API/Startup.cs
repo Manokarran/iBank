@@ -26,7 +26,6 @@ namespace IBankApp.API
                 .AddJsonFile("appsettings.json")
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json")
                 .AddEnvironmentVariables();
-
         }
 
         public IConfiguration Configuration { get; }
@@ -35,7 +34,7 @@ namespace IBankApp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<iBankAppContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("iBankConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("iBankConnection")));
 
             services.AddScoped(typeof(ICustomerServices), typeof(CustomerServices));
             services.AddScoped(typeof(ITransactionServices), typeof(TransactionService));
@@ -58,10 +57,7 @@ namespace IBankApp.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseMvc();
 
@@ -73,8 +69,8 @@ namespace IBankApp.API
                 dbContext.Database.EnsureCreated();
                 new iBankDataSetup(dbContext).SetUpData();
             }
-            //Initial data setup
 
+            //Initial data setup
         }
     }
 }

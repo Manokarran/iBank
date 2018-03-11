@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace iBankApp.Core.Domain.Model
 {
-    public partial class Account
+    public class Account
     {
         public Account()
         {
@@ -17,6 +17,5 @@ namespace iBankApp.Core.Domain.Model
         public DateTime? UpdateDateTime { get; set; }
         public Customer Customer { get; set; } = new Customer();
         public ICollection<AccountTransaction> AccountTransaction { get; set; } = new List<AccountTransaction>();
-
     }
 }

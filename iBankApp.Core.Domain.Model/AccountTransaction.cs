@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace iBankApp.Core.Domain.Model
 {
-    public partial class AccountTransaction
+    public class AccountTransaction
     {
         public long Id { get; set; }
         public long AccountId { get; set; }
@@ -12,6 +11,5 @@ namespace iBankApp.Core.Domain.Model
         public string TransactionCode { get; set; }
         public string UpdateBy { get; set; }
         public DateTime? UpdateDateTime { get; set; }
-
     }
 }

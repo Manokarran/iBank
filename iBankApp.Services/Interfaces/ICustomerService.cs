@@ -1,7 +1,5 @@
-﻿using iBankApp.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using iBankApp.ViewModel;
 
 namespace iBankApp.Services.Interfaces
 {
@@ -10,6 +8,5 @@ namespace iBankApp.Services.Interfaces
         IEnumerable<CustomerDTO> GetCustomers();
         IEnumerable<CustomerDTO> GetCustomer(long Id);
         IEnumerable<CustomerAccountsDTO> GetCustomerWithAccounts(long Id);
-        
     }
 }
