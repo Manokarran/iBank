@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CORE", "CORE", "{CEFF32E9-8067-4D46-9B80-1419823919AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBankApp.Core.Domain.Model", "iBankApp.Core.Domain.Model\iBankApp.Core.Domain.Model.csproj", "{8C0C32D7-3037-4679-AFB6-A31D25AEB9C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBankApp.Core.Data.Model", "iBankApp.Core.Data.Model\iBankApp.Core.Data.Model.csproj", "{076E3E51-EE39-4FC4-86B4-3BB1801D39B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBankApp.Core.Domain.Repository", "iBankApp.Core.Domain.Repository\iBankApp.Core.Domain.Repository.csproj", "{6FC3CAAD-8E6C-4A10-96B9-EE25F611A316}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{479AF192-2610-4FBE-9FD4-07B8180328B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBankApp.Infrastructure.Data", "iBankApp.Infrastructure.Data\iBankApp.Infrastructure.Data.csproj", "{90C85E16-7326-4D61-848A-CD6B69C52694}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C03D944A-3389-4B58-9A2B-BB1887494B4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8A0B3541-13DD-47F8-8D5F-DE959984FA4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBankApp.API", "IBankApp.API\IBankApp.API.csproj", "{B3AA8188-4CC1-4A37-9469-436CFC73EA3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBankApp.Services", "iBankApp.Services\iBankApp.Services.csproj", "{3EE81AE8-AB1B-493C-90BD-A9BF53C8E9C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBankApp.ViewModel", "iBankApp.ViewModel\iBankApp.ViewModel.csproj", "{15C1C84D-B39C-442F-B201-6A3AB8BCDCF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iBankApp.Data.Setup", "iBankApp.Data.Setup\iBankApp.Data.Setup.csproj", "{C869E587-6A59-4538-8746-D2F683D061D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C0C32D7-3037-4679-AFB6-A31D25AEB9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0C32D7-3037-4679-AFB6-A31D25AEB9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0C32D7-3037-4679-AFB6-A31D25AEB9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0C32D7-3037-4679-AFB6-A31D25AEB9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076E3E51-EE39-4FC4-86B4-3BB1801D39B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076E3E51-EE39-4FC4-86B4-3BB1801D39B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076E3E51-EE39-4FC4-86B4-3BB1801D39B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076E3E51-EE39-4FC4-86B4-3BB1801D39B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC3CAAD-8E6C-4A10-96B9-EE25F611A316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC3CAAD-8E6C-4A10-96B9-EE25F611A316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC3CAAD-8E6C-4A10-96B9-EE25F611A316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC3CAAD-8E6C-4A10-96B9-EE25F611A316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C85E16-7326-4D61-848A-CD6B69C52694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C85E16-7326-4D61-848A-CD6B69C52694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C85E16-7326-4D61-848A-CD6B69C52694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C85E16-7326-4D61-848A-CD6B69C52694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3AA8188-4CC1-4A37-9469-436CFC73EA3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3AA8188-4CC1-4A37-9469-436CFC73EA3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3AA8188-4CC1-4A37-9469-436CFC73EA3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3AA8188-4CC1-4A37-9469-436CFC73EA3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE81AE8-AB1B-493C-90BD-A9BF53C8E9C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE81AE8-AB1B-493C-90BD-A9BF53C8E9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE81AE8-AB1B-493C-90BD-A9BF53C8E9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE81AE8-AB1B-493C-90BD-A9BF53C8E9C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C1C84D-B39C-442F-B201-6A3AB8BCDCF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C1C84D-B39C-442F-B201-6A3AB8BCDCF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C1C84D-B39C-442F-B201-6A3AB8BCDCF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C1C84D-B39C-442F-B201-6A3AB8BCDCF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C869E587-6A59-4538-8746-D2F683D061D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C869E587-6A59-4538-8746-D2F683D061D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C869E587-6A59-4538-8746-D2F683D061D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C869E587-6A59-4538-8746-D2F683D061D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C0C32D7-3037-4679-AFB6-A31D25AEB9C6} = {CEFF32E9-8067-4D46-9B80-1419823919AB}
+		{076E3E51-EE39-4FC4-86B4-3BB1801D39B8} = {CEFF32E9-8067-4D46-9B80-1419823919AB}
+		{6FC3CAAD-8E6C-4A10-96B9-EE25F611A316} = {CEFF32E9-8067-4D46-9B80-1419823919AB}
+		{90C85E16-7326-4D61-848A-CD6B69C52694} = {479AF192-2610-4FBE-9FD4-07B8180328B9}
+		{B3AA8188-4CC1-4A37-9469-436CFC73EA3C} = {C03D944A-3389-4B58-9A2B-BB1887494B4C}
+		{3EE81AE8-AB1B-493C-90BD-A9BF53C8E9C4} = {C03D944A-3389-4B58-9A2B-BB1887494B4C}
+		{15C1C84D-B39C-442F-B201-6A3AB8BCDCF2} = {C03D944A-3389-4B58-9A2B-BB1887494B4C}
+		{C869E587-6A59-4538-8746-D2F683D061D4} = {8A0B3541-13DD-47F8-8D5F-DE959984FA4D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {946885A8-DCA4-4313-8376-4461B32F289B}
+	EndGlobalSection
+EndGlobal

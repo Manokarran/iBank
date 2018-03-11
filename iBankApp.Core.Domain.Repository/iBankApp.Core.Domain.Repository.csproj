@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\iBankApp.Core.Domain.Model\iBankApp.Core.Domain.Model.csproj" />
+    <ProjectReference Include="..\iBankApp.Infrastructure.Data\iBankApp.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+</Project>
