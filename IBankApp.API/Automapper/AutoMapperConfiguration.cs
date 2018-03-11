@@ -9,7 +9,6 @@ namespace iBankApp.API.Automapper
         public AutoMapperConfiguration()
         {
             var mapperConfig = new MapperConfiguration(cfg => { cfg.AddProfile<DomainToDTOProfile>(); });
-
             _mapperConfiguration = mapperConfig;
         }
 

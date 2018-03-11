@@ -24,27 +24,15 @@ namespace IBankApp.API.Controllers
         }
 
         [HttpGet("customer")]
-        public IActionResult Get()
-        {
-            return Ok(_customerServices.GetCustomers());
-        }
+        public IActionResult Get() => Ok(_customerServices.GetCustomers());
 
         [HttpGet("customer/{Id}")]
-        public IActionResult Get(long Id)
-        {
-            return Ok(_customerServices.GetCustomer(Id));
-        }
+        public IActionResult Get(long Id) => Ok(_customerServices.GetCustomer(Id));
 
         [HttpGet("customer/{Id}/IncludeAccounts")]
-        public IActionResult IncludeAccounts(long Id)
-        {
-            return Ok(_customerServices.GetCustomerWithAccounts(Id));
-        }
+        public IActionResult IncludeAccounts(long Id) => Ok(_customerServices.GetCustomerWithAccounts(Id));
 
         [HttpGet("customer/{Id}/IncludeTransactions")]
-        public IActionResult IncludeTransactions(long Id)
-        {
-            return Ok(_transactionServices.GetCustomerTransactions(Id));
-        }
+        public IActionResult IncludeTransactions(long Id) => Ok(_transactionServices.GetCustomerTransactions(Id));
     }
 }
