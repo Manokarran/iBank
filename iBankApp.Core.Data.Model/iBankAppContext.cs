@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace iBankApp.Core.Data.Model
 {
-    public abstract class iBankAppContext : DbContext
+    public class iBankAppContext : DbContext
     {
         public virtual DbSet<Account> Account { get; set; }
         public virtual DbSet<AccountTransaction> AccountTransaction { get; set; }

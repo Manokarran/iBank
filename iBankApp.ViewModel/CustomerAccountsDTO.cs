@@ -2,7 +2,7 @@
 
 namespace iBankApp.ViewModel
 {
-    public abstract class CustomerAccountsDTO
+    public class CustomerAccountsDTO
     {
         public CustomerAccountsDTO() => Accounts = new HashSet<AccountDTO>();
 

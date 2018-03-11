@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace iBankApp.ViewModel
 {
-    public abstract class CustomerTransactionDTO
+    public class CustomerTransactionDTO
     {
         public CustomerTransactionDTO() => Transactions = new HashSet<TransactionDTO>();
 

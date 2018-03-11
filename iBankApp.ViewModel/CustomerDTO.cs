@@ -1,6 +1,6 @@
 ﻿namespace iBankApp.ViewModel
 {
-    public abstract class CustomerDTO
+    public class CustomerDTO
     {
         public long CustomerId { get; set; }
         public string CustomerFirstName { get; set; }
